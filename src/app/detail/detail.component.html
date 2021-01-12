@@ -1,0 +1,59 @@
+<ion-header translucent>
+  <ion-toolbar class="new-background-color" style="padding-bottom: 2rem;">
+    <ion-buttons start>
+
+      <ion-icon (click)="onHome()" name="chevron-back-outline" style="size: 36px;"></ion-icon>
+
+    </ion-buttons>
+    <ion-title>Summary</ion-title>
+  </ion-toolbar>
+</ion-header>
+<br>
+
+<ion-content fullscreen>
+  <ion-grid>
+    <ion-row>
+      <div class="title">National ID:</div>
+    </ion-row>
+    <br>
+    <ion-row>
+      <div class="content">{{this.nationId}}</div>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <div class="title">Email:</div>
+    </ion-row>
+    <br>
+    <ion-row>
+      <div class="content">{{this.email}}</div>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <div class="title">Name:</div>
+    </ion-row>
+    <br>
+    <ion-row>
+      <div class="content">{{this.name}}</div>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <div class="title">Birth-Day:</div>
+    </ion-row>
+    <br>
+    <ion-row>
+      <div class="content">{{this.birth}}</div>
+    </ion-row>
+    <br>
+    <br>
+    <ion-row>
+      <ion-col size="12">
+        <ion-button expand="block" color="primary" style="margin-left: 1rem; margin-right: 1rem;" type="submit">
+          Register
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,68 +1,92 @@
 <ion-header translucent>
-  <ion-toolbar class="new-background-color">
+  <ion-toolbar class="new-background-color" style="padding-bottom: 2rem;">
     <ion-title>Registration Form</ion-title>
   </ion-toolbar>
 </ion-header>
-
-
+<br>
 <ion-content fullscreen>
-  <form>
+  <form [formGroup]="formGroup" (ngSubmit)="onSubmit(formGroup.value)">
     <ion-grid>
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="stacked">National ID (13 หลัก)
-            </ion-label>
-            <ion-input type="tel" color="primary" maxlength="13" required></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br>
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="stacked">Email</ion-label>
-            <ion-input type="email" color="primary" required></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br>
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="stacked">Password</ion-label>
-            <ion-input color="primary" type="password" min="6" required>
+      <div class="container1">
+        <ion-row class="ion-text-center">
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">National ID (13 หลัก) <span
+                  *ngIf="formInputIsRequired('nationId')" class="required">&#42;</span>
+              </ion-label>
+              <ion-input formControlName="nationId" type="tel" maxlength="13" min="13" color="primary" required="true"
+                style="padding-left: 30px;">
+              </ion-input>
 
-            </ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br>
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="stacked">Name</ion-label>
-            <ion-input color="primary" required></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br>
-      <ion-row>
-        <ion-col size="12">
-          <ion-item>
-            <ion-label position="stacked">Birthday</ion-label>
-            <ion-input color="primary"></ion-input>
-          </ion-item>
-        </ion-col>
-      </ion-row>
-      <br>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!-- <br> -->
+        <ion-row justify-content-center align-items-center>
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">Email <span *ngIf="formInputIsRequired('email')"
+                  class="required">&#42;</span></ion-label>
+              <ion-input formControlName="email" type="email" color="primary" required="true"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!-- <br> -->
+        <ion-row justify-content-center align-items-center>
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">Password (มากกว่า 6 หลัก) <span
+                  *ngIf="formInputIsRequired('password')" class="required">&#42;</span></ion-label>
+              <ion-input formControlName="password" color="primary" type="password" min="6" required="true">
 
+              </ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <!-- <br> -->
+        <ion-row justify-content-center align-items-center>
+          <ion-col size="12">
+            <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">Name</ion-label>
+              <ion-input formControlName="name" color="primary"></ion-input>
+            </ion-item>
+          </ion-col>
+        </ion-row>
+        <ion-row justify-content-center align-items-center>
+          <ion-col size="12">
+            <!-- <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">Birth-Day</ion-label>
+              <ion-datetime pickerFormat="D/M/YYYY" formControlName="birth" color="primary">
+              </ion-datetime>
+            </ion-item> -->
+            <!-- <div class="date-picker-wrapper">
+              <div class="container">
+                <div class="group"> -->
+            <ion-item lines="none">
+              <ion-label position="stacked" style="font-weight: bold;">Birth-Day</ion-label>
+              <igx-date-picker formControlName="birth" id="dialogPicker" cancelButtonLabel="close"
+                todayButtonLabel="today" [monthsViewNumber]="1" [hideOutsideDays]="true">
+                <label igxLabel></label>
+              </igx-date-picker>
+            </ion-item>
+            <!-- </div>
+            </div>
+            </div> -->
+          </ion-col>
+        </ion-row>
+      </div>
+      <!-- <br> -->
+
+      <br>
       <ion-row>
         <ion-col size="12">
-          <ion-button expand="block" color="primary" disabled="(required == true)">Next</ion-button>
+          <ion-button expand="block" color="primary" [disabled]="!formGroup.valid"
+            style="margin-left: 1rem; margin-right: 1rem;" type="submit">
+            Next
+          </ion-button>
         </ion-col>
       </ion-row>
     </ion-grid>
   </form>
-
 </ion-content>
+<router-outlet></router-outlet>
