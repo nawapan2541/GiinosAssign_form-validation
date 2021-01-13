@@ -48,14 +48,14 @@ export class HomePage implements OnInit {
   onSubmit(formData: any) {
     const format = 'dd/MM/yyyy';
     // console.log(formData);
-    const formatdate = this.pipe.transform(formData.birth, format);
+    const formatdate: string = this.pipe.transform(formData.birth, format);
 
     this.userData.userData = {
       nationId: formData.nationId,
       email: formData.email,
       password: formData.password,
       name: formData.name,
-      birth: formatdate,
+      birth: formData.birth,
     };
     this.router.navigate(['detail']);
 
