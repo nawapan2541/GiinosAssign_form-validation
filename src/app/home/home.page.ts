@@ -34,6 +34,7 @@ export class HomePage implements OnInit {
       email: ["", Validators.compose([
         Validators.required,
         Validators.email,
+        Validators.pattern("[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})"),
       ])],
       password: ["", Validators.compose([
         Validators.minLength(6),

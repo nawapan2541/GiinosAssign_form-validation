@@ -43,7 +43,7 @@ ion-item {
 }
 
 ion-toolbar {
-  --color: #ffffff;
+  // --color: #ffffff;
 }
 
 .date-picker-wrapper {
@@ -76,10 +76,11 @@ ion-input {
   border-radius: 10px !important;
   margin-top: 1rem;
   font-size: 0.9em;
-  border: 1px solid #000000 !important;
+  border: 2px solid #000000 !important;
   /* height: 10%; */
   /* width: 41%; */
-  max-width: 100%; // this is applying perfectly
+  width: 100%;
+  max-width: auto; // this is applying perfectly
   max-height: 10vh;
 }
 
@@ -91,7 +92,7 @@ igx-date-picker {
   border-radius: 10px !important;
   margin-top: 1rem;
   font-size: 0.9em;
-  border: 1px solid #000000 !important;
+  border: 2px solid #000000 !important;
   /* height: 10%; */
   /* width: 41%; */
   width: 100%;
@@ -105,9 +106,9 @@ ion-datetime {
   border-radius: 10px !important;
   margin-top: 1rem;
   font-size: 0.9em;
-  border: 1px solid #000000 !important;
+  border: 2px solid #000000 !important;
   /* height: 10%; */
   /* width: 41%; */
   max-width: 100%; // this is applying perfectly
-  max-height: 10vh;
+  max-height: 20vh;
 }

@@ -1,5 +1,5 @@
-<ion-header translucent>
-  <ion-toolbar class="new-background-color" style="padding-bottom: 2rem;">
+<ion-header>
+  <ion-toolbar color="light" style="padding-bottom: 1rem; padding-top: 1rem;">
     <ion-title>Registration Form</ion-title>
   </ion-toolbar>
 </ion-header>
@@ -10,12 +10,12 @@
       <div class="container1">
         <ion-row class="ion-text-center">
           <ion-col size="12">
-            <ion-item lines="none">
+            <ion-item lines="none" style="display: flex;">
               <ion-label position="stacked" style="font-weight: bold;">National ID (13 หลัก) <span
                   *ngIf="formInputIsRequired('nationId')" class="required">&#42;</span>
               </ion-label>
-              <ion-input formControlName="nationId" type="tel" maxlength="13" min="13" color="primary" required="true"
-                style="padding-left: 30px;">
+              <ion-input formControlName="nationId" type="number" maxlength="13" min="13" color="primary"
+                required="true" class="ion-text-left" style="padding-left: 30px;" clearInput pattern="[0-9]{13}">
               </ion-input>
 
             </ion-item>
@@ -27,7 +27,9 @@
             <ion-item lines="none">
               <ion-label position="stacked" style="font-weight: bold;">Email <span *ngIf="formInputIsRequired('email')"
                   class="required">&#42;</span></ion-label>
-              <ion-input formControlName="email" type="email" color="primary" required="true"></ion-input>
+              <ion-input formControlName="email" type="email" color="primary" required="true"
+                pattern="[A-Za-z0-9._%+-]{3,}@[a-zA-Z]{3,}([.]{1}[a-zA-Z]{2,}|[.]{1}[a-zA-Z]{2,}[.]{1}[a-zA-Z]{2,})">
+              </ion-input>
             </ion-item>
           </ion-col>
         </ion-row>
@@ -54,21 +56,21 @@
         </ion-row>
         <ion-row justify-content-center align-items-center>
           <ion-col size="12">
-            <!-- <ion-item lines="none">
+            <ion-item lines="none">
               <ion-label position="stacked" style="font-weight: bold;">Birth-Day</ion-label>
               <ion-datetime pickerFormat="D/M/YYYY" formControlName="birth" color="primary">
+
               </ion-datetime>
-            </ion-item> -->
+            </ion-item>
             <!-- <div class="date-picker-wrapper">
               <div class="container">
                 <div class="group"> -->
-            <ion-item lines="none">
+            <!-- <ion-item lines="none">
               <ion-label position="stacked" style="font-weight: bold;">Birth-Day</ion-label>
               <igx-date-picker formControlName="birth" id="dialogPicker" cancelButtonLabel="close"
                 todayButtonLabel="today" [monthsViewNumber]="1" [hideOutsideDays]="true">
-                <label igxLabel></label>
               </igx-date-picker>
-            </ion-item>
+            </ion-item> -->
             <!-- </div>
             </div>
             </div> -->

@@ -4,11 +4,11 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class UserService {
-  nationId: String;
-  email: String;
-  password: String;
-  name: String;
-  birth: String;
+  nationId: any;
+  email: any;
+  password: any;
+  name: any;
+  birth: any;
 
   userData = {
     nationId: this.nationId,
